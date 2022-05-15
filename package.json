@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/minnecoder/mongo-delivery-api/issues"
   },
-  "homepage": "https://github.com/minnecoder/mongo-delivery-api#readme"
+  "homepage": "https://github.com/minnecoder/mongo-delivery-api#readme",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
 }
