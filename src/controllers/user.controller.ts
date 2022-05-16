@@ -65,4 +65,41 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
         }
     });
 };
-export default { addUser };
+
+const getUsers = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const users = await User.find();
+        return res.status(200).json(users);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
+
+const getSingleUser = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const user = await User.findById(req.params.userId);
+        return res.status(200).json(user);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
+
+const updateUser = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.params.userId, req.body, { new: true });
+        return res.status(200).json(user);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
+
+const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const user = await User.findByIdAndDelete(req.params.userId);
+        return res.status(200).json(user);
+    } catch (error) {
+        return res.status(500).json(error);
+    }
+};
+
+export default { addUser, loginUser, getUsers, getSingleUser, updateUser, deleteUser };
