@@ -12,8 +12,8 @@ export interface ITeamModel extends ITeam, Document {}
 const TeamSchema: Schema = new Schema(
     {
         name: { type: String, required: true },
-        workers: [{ body: Number }],
-        managers: [{ body: Number }],
+        workers: [{ body: Schema.Types.ObjectId, ref: 'User' }],
+        managers: [{ body: Schema.Types.ObjectId, ref: 'User' }],
         hubId: { type: Schema.Types.ObjectId, required: true, ref: 'Hub' }
     },
     {

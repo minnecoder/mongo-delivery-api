@@ -25,7 +25,7 @@ const DriversSchema: Schema = new Schema(
         email: { type: String, required: true },
         birthday: { type: String, required: true },
         hireDate: { type: String, required: true },
-        team: { type: Number, required: true },
+        team: { type: Schema.Types.ObjectId, required: true, ref: 'Team' },
         vehicleId: { type: Schema.Types.ObjectId, required: true, ref: 'Vehicle' }
     },
     {

@@ -12,7 +12,7 @@ export interface ICustomerModel extends ICustomer, Document {}
 
 const CustomerSchema: Schema = new Schema(
     {
-        organizationId: { type: Number, required: true },
+        organizationId: { type: Number, required: true, ref: 'Organization' },
         name: { type: String, required: true },
         addressId: { type: Schema.Types.ObjectId, required: true, ref: 'Address' },
         phone: { type: Number, required: true },
