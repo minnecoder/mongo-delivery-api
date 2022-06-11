@@ -14,7 +14,7 @@ const HubSchema: Schema = new Schema(
         name: { type: String, required: true },
         location: { type: String, required: true },
         addressId: { type: Schema.Types.ObjectId, required: true, ref: 'Address' },
-        teams: [{ body: Schema.Types.ObjectId, ref: 'Team' }]
+        teams: [{ type: Schema.Types.ObjectId, ref: 'Team' }]
     },
     {
         versionKey: false,

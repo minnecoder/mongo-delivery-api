@@ -14,7 +14,7 @@ const OrganizationSchema: Schema = new Schema(
         name: { type: String, required: true },
         email: { type: String, required: true },
         country: { type: String, required: true },
-        organizationAdmins: [{ body: Schema.Types.ObjectId, ref: 'User' }]
+        organizationAdmins: [{ type: Schema.Types.ObjectId, ref: 'User' }]
     },
     {
         versionKey: false,
