@@ -52,7 +52,7 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
     }
     console.log(process.env.JWT_SECRET);
     // Create and assign a token
-    const token = jwt.sign({ _id: user._id, role: user.role }, process.env.JWT_SECRET);
+    const token = jwt.sign({ _id: user._id, role: user.role }, process.env.JWT_SECRET as string);
 
     return res.status(200).json({
         token,
